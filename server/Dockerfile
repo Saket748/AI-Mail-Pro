@@ -1,7 +1,7 @@
 # ------------------------
 # Stage 1: Build with Maven and Java 23
 # ------------------------
-FROM maven:3.9.8-eclipse-temurin-23 AS build
+FROM maven:3.9.8-eclipse-temurin-21 AS build
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ RUN mvn clean package -DskipTests
 # ------------------------
 # Stage 2: Run the app
 # ------------------------
-FROM eclipse-temurin:23-jdk-jammy AS runtime
+FROM eclipse-temurin:21-jdk-jammy AS runtime
 
 WORKDIR /app
 
